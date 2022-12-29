@@ -1,0 +1,88 @@
+.jogo{
+    display: grid;
+    width: 603px;
+    height: 600px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.casa{
+    width: 180px;
+    height: 180px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+.casa.x::before,
+.casa.x::after{
+    content:"";
+    height: calc(100px * 0.15);
+    width: calc(100px * 0.9);
+    background: red;
+    position: absolute;
+}
+
+.casa.x::before{
+    transform: rotate(45deg);
+}
+
+.casa.x::after{
+    transform: rotate(-45deg);
+}
+
+.casa.circulo::before,
+.casa.circulo::after{
+    content:"";
+    height: calc(100px * 0.9);
+    width: calc(100px * 0.9);
+    background: blue;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.resultado{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    flex-direction: column;
+    
+}
+
+.resultado-vencedor{
+    font-size: 2.5rem;
+    background-color: aquamarine;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    margin-top: 16px;
+    color: white;
+}
+
+.resultado-vencedor:hover{
+    color: aquamarine;
+    background-color: white;
+}
+
+.resultado-vencedor-texto{
+    color: cyan;
+    font-size: 5rem;
+}
+
+.show-vencedor{
+    display: flex;
+}
